@@ -1,0 +1,251 @@
+:root {
+  --color-principal: #00bfff;
+  --color-fondo: #101827;
+  --color-texto: #f0f0f0;
+  --color-secundario: #f4faff;
+  --color-sombra: rgba(0, 191, 255, 0.2);
+  --color-sombra-hover: rgba(0, 191, 255, 0.4);
+  --color-gris: #555;
+  --color-blanco: #fff;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  margin-top: 80px;
+  transition: all 0.5s ease;
+}
+
+header img {
+  width: 40px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: 'Orbitron', 'Audiowide', sans-serif;
+  background: linear-gradient(90deg, var(--color-principal), var(--color-blanco), var(--color-principal));
+  background-size: 200% auto;
+  color: var(--color-blanco);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: argShine 6s linear infinite;
+  text-align: center;
+  margin-top: 40px;
+}
+
+@keyframes argShine {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.main-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.main-buttons button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.btn-celeste {
+  background-color: var(--color-principal);
+  color: var(--color-blanco);
+}
+
+.btn-blanco {
+  background-color: var(--color-blanco);
+  color: var(--color-principal);
+}
+
+.btn-celeste:hover, .btn-blanco:hover {
+  transform: scale(1.05);
+}
+
+.section {
+  display: none;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.visible {
+  display: block;
+}
+
+.section h2 {
+  color: var(--color-principal);
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+}
+
+.volver-btn {
+  margin-top: 20px;
+  background-color: var(--color-principal);
+  border: none;
+  color: var(--color-blanco);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hamburguesa para la sidebar */
+.hamburger {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  font-size: 30px;
+  color: var(--color-blanco);
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Sidebar ocultable */
+.sidebar {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #1c1c2e;
+  width: 220px;
+  height: 100vh;
+  padding-top: 60px;
+  position: fixed;
+  top: 0;
+  left: -220px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  color: var(--color-blanco);
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar a:hover {
+  background-color: transparent;
+  color: var(--color-blanco);
+}
+
+/* Sección de Profesionales */
+.titulo-seccion {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin: 30px 0;
+  color: var(--color-principal);
+}
+
+.contenedor-profesionales {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px 40px;
+}
+
+.tarjeta-profesional {
+  background-color: var(--color-secundario);
+  border: 1px solid #ccefff;
+  border-radius: 12px;
+  padding: 15px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 0 12px var(--color-sombra);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-profesional img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid var(--color-principal);
+}
+
+.tarjeta-profesional h3 {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+}
+
+.tarjeta-profesional p {
+  margin: 5px 0;
+  color: var(--color-gris);
+}
+
+.tarjeta-profesional:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--color-sombra-hover);
+}
+
+/* Sección de Oficios */
+#oficios {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.contenedor-oficios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tarjeta-oficio {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-oficio:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta-oficio img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.tarjeta-oficio h3 {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
